@@ -22,6 +22,7 @@ int jumps(int arr[], int n, int index){
      int k = n;
      bool found = false;
      bool allZeros = true;
+
      std::cout << index + 1 << " " << arr[index] << '\n';
      for(int i = index+1; i <= index + arr[index]; i++){
 
@@ -63,6 +64,10 @@ int main(){
           int arr[n];
           for(int i = 0; i < n; i++)
                cin >> arr[i];
+          if(arr[0] >= n){
+               cout << 1 << endl;
+               continue;
+          }
           int ans = jumps(arr,n,0);
           if(ans == INT_MAX)
                std::cout << -1 << '\n';
